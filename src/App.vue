@@ -49,11 +49,18 @@
 				></v-img>
 			</template>
 
-			<v-app-bar-nav-icon
-				@click="drawer = !drawer"
-			></v-app-bar-nav-icon>
-
-			<v-app-bar-title>Michal Todo App</v-app-bar-title>
+			<v-container>
+				<v-row>
+					<v-app-bar-nav-icon
+						@click="drawer = !drawer"
+					></v-app-bar-nav-icon>
+					<v-spacer></v-spacer>
+					<search />
+				</v-row>
+				<v-row>
+					<v-app-bar-title>Organizer</v-app-bar-title>
+				</v-row>
+			</v-container>
 		</v-app-bar>
 
 		<v-main>
@@ -65,8 +72,9 @@
 
 <script>
 import Snackbar from './components/Shared/Snackbar.vue'
+import Search from './components/Tools/Search.vue'
 export default {
-	components: { Snackbar },
+	components: { Snackbar, Search },
 	data: () => ({
 		drawer: null,
 		items: [
