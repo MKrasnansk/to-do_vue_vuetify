@@ -42,6 +42,12 @@ export default new Vuex.Store({
 				task => task.id !== id
 			)
 		},
+		updateTaskTitle(state, payload) {
+			let task = state.tasks.filter(
+				task => task.id === payload.id
+			)[0]
+			task.title = payload.title
+		},
 		showSnackbar(state, text) {
 			let timeout = 0
 			if (state.snackbar.show) {
@@ -60,11 +66,15 @@ export default new Vuex.Store({
 	actions: {
 		addTask({ commit }, newTaskTitle) {
 			commit('addTask', newTaskTitle)
-			commit('showSnackbar', 'Task added!')
+			commit('showSnackbar', 'Úloha pridaná!')
 		},
 		deleteTask({ commit }, id) {
 			commit('deleteTask', id)
-			commit('showSnackbar', 'Task deleted!')
+			commit('showSnackbar', 'Úloha vymazaná!')
+		},
+		updateTaskTitle({ commit }, payload) {
+			commit('updateTaskTitle', payload)
+			commit('showSnackbar', 'Úloha upravená!')
 		}
 	},
 	getters: {}
