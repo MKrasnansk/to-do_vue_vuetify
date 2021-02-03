@@ -13,7 +13,10 @@
 			<li>Stranka vytvorena: Február 2021</li>
 			<li>Autor: Michal Krasňanský</li>
 			<li>Framework: Vue.js</li>
-			<li>knižnice: Vuetify, vuedraggable a date-fns</li>
+			<li>
+				knižnice: Vuetify, vuedraggable, date-fns a
+				localbase
+			</li>
 		</ul>
 
 		<h3>Kontakt</h3>
