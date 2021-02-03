@@ -28,7 +28,10 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+div.v-snack:not(.v-snack--absolute) {
+	height: 100%;
+}
 .snack-btn {
 	background: none;
 	&:hover {

@@ -64,24 +64,38 @@ export default {
 		},
 		items: [
 			{
-				title: 'Edit',
+				title: 'Upraviť',
 				icon: 'mdi-pencil',
 				click() {
 					this.dialogs.edit = true
 				}
 			},
 			{
-				title: 'Due date',
+				title: 'Dátum',
 				icon: 'mdi-timer-outline',
 				click() {
 					this.dialogs.dueDate = true
 				}
 			},
 			{
-				title: 'Delete',
+				title: 'Zmazať',
 				icon: 'mdi-delete-variant',
 				click() {
 					this.dialogs.delete = true
+				}
+			},
+			{
+				title: 'Presunúť',
+				icon: 'mdi-drag-horizontal-variant',
+				click() {
+					if (!this.$store.state.search) {
+						this.$store.commit('toggleSorting')
+					} else {
+						this.$store.commit(
+							'showSnackbar',
+							'Ukončite vzhladavanie!'
+						)
+					}
 				}
 			}
 		]
@@ -93,5 +107,3 @@ export default {
 	}
 }
 </script>
-
-<style></style>

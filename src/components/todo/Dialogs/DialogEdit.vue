@@ -2,7 +2,7 @@
 	<v-dialog :value="true" persistent max-width="290">
 		<v-card>
 			<v-card-title class="headline primary--text">
-				Edit!
+				Upraviť
 			</v-card-title>
 			<v-card-text
 				>Upraviť názov úlohy?
@@ -58,6 +58,7 @@ export default {
 				}
 				this.$store.dispatch('updateTaskTitle', payload)
 				this.$emit('close')
+				this.$vuetify.goTo(0, { duration: 0 })
 			}
 		}
 	},

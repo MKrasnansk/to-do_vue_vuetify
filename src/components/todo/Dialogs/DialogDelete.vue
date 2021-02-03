@@ -2,7 +2,7 @@
 	<v-dialog :value="true" persistent max-width="290">
 		<v-card>
 			<v-card-title class="headline primary--text">
-				Delete!
+				Zmazať
 			</v-card-title>
 			<v-card-text>Určite chcte vzmazať úlohu?</v-card-text>
 			<v-card-actions>

@@ -1,10 +1,14 @@
 <template>
 	<v-text-field
-		v-model="search"
+		:value="$store.state.search"
+		@input="$store.commit('setSearch', $event)"
 		@focus="searchClosed = false"
 		@blur="searchClosed = true"
+		:disabled="$store.state.sorting"
 		class="expanding-search mt-1"
-		:class="{ closed: searchClosed && !search }"
+		:class="{
+			closed: searchClosed && !$store.state.search
+		}"
 		placeholder="Vyhladať úlohu?"
 		prepend-inner-icon="mdi-magnify"
 		filled
@@ -17,7 +21,6 @@
 export default {
 	data() {
 		return {
-			search: null,
 			searchClosed: true
 		}
 	}
